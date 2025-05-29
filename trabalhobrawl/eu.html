@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="eu.css">
+  <meta charset="UTF-8">
+  <title>Carrossel de Fotos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: bisque;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .carousel {
+      position: relative;
+      width: 1200px;
+      height: 800px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: 10px solid white;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+<style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #00aaff, #0044cc);
+      /* Você pode ajustar as cores conforme desejar */
+    }
+  </style>
+  
+
+
+
+<h1>Atingindo os seus sonhos</h1>
+
+
+  <div class="carousel">
+<img src="img/WhatsApp Image 2025-05-27 at 18.31.02 (1).jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 18.31.02 (2).jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 18.31.02.jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 18.31.03 (1).jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 20.17.46 (1).jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 19.53.23.jpeg">
+  <img src="img/WhatsApp Image 2025-05-27 at 21.16.38.jpeg">
+  <img src="img/_MG_9180.JPG">
+  <img src="img/_MG_9251.JPG">
+  <img src="img/_MG_9283.JPG">
+  <img src="img/_MG_9347.JPG">
+  <img src="img/_MG_9488.JPG">
+  <img src="img/_MG_9828.JPG">
+  <img src="img/_MG_9834.JPG">
+  <img src="img/IMG_0243.JPG">
+  <img src="img/IMG_0257.JPG">
+  <img src="img/IMG_9258.JPG">
+  <img src="img/IMG_9549.JPG">
+  <img src="img/IMG_9573.JPG">
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevImage()"> ⇦ </button>
+    <button onclick="nextImage()"> ⇨ </button>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+  </script>
+</body>
+</html>
